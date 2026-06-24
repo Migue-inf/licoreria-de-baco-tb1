@@ -1,65 +1,71 @@
 # Licorería de Baco
 
-Proyecto frontend desarrollado para el TB1 del curso Desarrollo para Entorno Web.
-La aplicación presenta información de la Licorería de Baco, su catálogo de productos,
-promociones, horario, ubicación y medios de contacto.
+Este proyecto fue desarrollado para el TB1 del curso Desarrollo para Entorno Web. La idea principal es crear una página web informativa para la Licorería de Baco, mostrando de forma ordenada sus productos, promociones, horarios, ubicación y medios de contacto.
 
-El alcance es únicamente informativo. No incluye backend, base de datos, login,
-registro de usuarios ni pasarela de pagos.
+El proyecto se trabajó como una propuesta frontend, por lo que no incluye base de datos, backend, inicio de sesión, registro de usuarios ni pagos en línea. El objetivo en esta etapa es presentar una página funcional y entendible, usando las tecnologías vistas durante las primeras semanas del curso.
 
-## Tecnologías utilizadas
+## Tecnologías usadas
 
-- Angular
-- TypeScript
-- HTML5
-- CSS3
-- Bootstrap 5
-- Visual Studio Code
-- Git y GitHub
+Para el desarrollo se utilizaron las siguientes herramientas:
+
+* Angular
+* TypeScript
+* HTML5
+* CSS3
+* Bootstrap 5
+* Visual Studio Code
+* Git y GitHub
 
 ## Integrantes
 
-- Miguel Angel Cancho Infante — U202324159
-- Juan Daniel Castro Taype — U202111026
-- Jhonatan Freddy Ccoyso Huaman — U202421459
-- Jefry Rojas Perez — U202313424
-- Alejandro Gerardo Zevallos Chacon — U202216681
+* Miguel Angel Cancho Infante — U202324159
+* Juan Daniel Castro Taype — U202111026
+* Jhonatan Freddy Ccoyso Huaman — U202421459
+* Jefry Rojas Perez — U202313424
+* Alejandro Gerardo Zevallos Chacon — U202216681
 
 ## Secciones de la página
 
-- **Inicio y Nosotros:** banner principal, presentación de la licorería y mensaje de consumo responsable.
-- **Catálogo:** página separada con filtro por categorías, 15 productos de ejemplo y paginación.
-- **Verificación de edad:** confirmación de mayoría de edad antes de mostrar los productos.
-- **Promociones:** página separada con tres ofertas referenciales.
-- **Contacto:** página separada con teléfono, WhatsApp, horario y enlace a Google Maps.
+La página cuenta con las siguientes secciones principales:
+
+- Inicio: presenta la licorería y una breve descripción del negocio.
+- Nosotros: explica de forma sencilla la propuesta de la licorería.
+- Catálogo: muestra productos organizados por categorías como vinos, cervezas, whiskies, rones, vodkas, pisco y otros licores.
+- Verificación de edad: antes de ver el catálogo, el usuario debe confirmar que es mayor de 18 años.
+- Promociones: muestra algunas ofertas referenciales.
+- Contacto: incluye horario, ubicación, teléfono y acceso directo por WhatsApp.
+
+Los productos, precios y promociones son datos referenciales usados solo para fines académicos.
 
 ## Cómo ejecutar el proyecto
 
-1. Instalar las dependencias:
+Primero se deben instalar las dependencias:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-2. Iniciar el servidor de desarrollo:
+Luego se ejecuta el proyecto con:
 
-   ```bash
-   ng serve
-   ```
+```bash
+ng serve
+```
 
-3. Abrir en el navegador:
-
-   ```text
-   http://localhost:4200/
-   ```
-
-También se puede iniciar con:
+También se puede usar:
 
 ```bash
 npm start
 ```
 
-## Estructura principal
+Después de ejecutar el proyecto, se abre en el navegador con la siguiente dirección:
+
+```text
+http://localhost:4200/
+```
+
+## Estructura principal del proyecto
+
+La estructura principal utilizada es la siguiente:
 
 ```text
 src/
@@ -73,28 +79,18 @@ src/
 └── styles.css
 ```
 
-La página utiliza Angular Router con cuatro rutas sencillas:
+Además, el proyecto cuenta con archivos de configuración propios de Angular como `angular.json`, `package.json`, `tsconfig.json` y otros archivos necesarios para su ejecución.
 
-- `/` para Inicio y Nosotros.
-- `/catalogo` para productos, filtros y paginación.
-- `/promociones` para las ofertas.
-- `/contacto` para los medios de contacto y ubicación.
+## Rutas de la página
 
-El catálogo muestra la opción **Todas** por defecto. Cada filtro reinicia la página en
-el número 1 y la paginación se calcula de acuerdo con los productos encontrados.
+La navegación se organizó con rutas simples:
 
-## Datos referenciales
+* `/` para la página de inicio.
+* `/catalogo` para el catálogo de productos.
+* `/promociones` para las promociones.
+* `/contacto` para los medios de contacto.
 
-Los precios y el horario son datos referenciales para fines académicos. La sección
-de contacto muestra la ubicación en la Av. Caminos del Inca, Santiago de Surco 15039,
-un enlace directo a Google Maps y el teléfono que ya figuraba en el proyecto original.
+## Comentario final
 
-## Commits sugeridos para la evidencia
+Este avance busca mostrar una solución web sencilla, ordenada y fácil de usar para mejorar la presencia digital de la Licorería de Baco. También se consideró el consumo responsable, por eso se agregó la verificación de mayoría de edad antes de mostrar los productos.
 
-1. `feat: crear estructura base de la página`
-2. `feat: implementar inicio y navegación`
-3. `feat: implementar catálogo de productos`
-4. `feat: implementar promociones y contacto`
-5. `feat: implementar verificación de edad`
-6. `style: mejorar diseño responsive`
-7. `docs: actualizar README`
