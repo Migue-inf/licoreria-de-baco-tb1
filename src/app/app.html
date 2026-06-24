@@ -1,9 +1,24 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-    <router-outlet></router-outlet>
+<header class="barra-principal sticky-top">
+  <nav class="container d-flex flex-wrap align-items-center justify-content-between py-2">
+    <a class="marca d-flex align-items-center" href="/">
+      <img src="assets/img/LogoOficial_debaco.jpeg" alt="Logo de la Licorería de Baco">
+      <span>Licorería de Baco</span>
+    </a>
+
+    <div class="menu d-flex flex-wrap justify-content-center">
+      <a href="/">Inicio</a>
+      <a href="/catalogo">Catálogo</a>
+      <a href="/promociones">Promociones</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="pie-pagina py-4">
+  <div class="container text-center">
+    <p class="mb-1">Licorería de Baco - Lima, Perú</p>
+    <small>Tomar bebidas alcohólicas en exceso es dañino.</small>
+  </div>
+</footer>

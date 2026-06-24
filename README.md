@@ -1,59 +1,100 @@
-# Proyectoparcialdesarrolloweb
+# Licorería de Baco
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+Proyecto frontend desarrollado para el TB1 del curso Desarrollo para Entorno Web.
+La aplicación presenta información de la Licorería de Baco, su catálogo de productos,
+promociones, horario, ubicación y medios de contacto.
 
-## Development server
+El alcance es únicamente informativo. No incluye backend, base de datos, login,
+registro de usuarios ni pasarela de pagos.
 
-To start a local development server, run:
+## Tecnologías utilizadas
+
+- Angular
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap 5
+- Visual Studio Code
+- Git y GitHub
+
+## Integrantes
+
+- Miguel Angel Cancho Infante — U202324159
+- Juan Daniel Castro Taype — U202111026
+- Jhonatan Freddy Ccoyso Huaman — U202421459
+- Jefry Rojas Perez — U202313424
+- Alejandro Gerardo Zevallos Chacon — U202216681
+
+## Secciones de la página
+
+- **Inicio y Nosotros:** banner principal, presentación de la licorería y mensaje de consumo responsable.
+- **Catálogo:** página separada con filtro por categorías, 15 productos de ejemplo y paginación.
+- **Verificación de edad:** confirmación de mayoría de edad antes de mostrar los productos.
+- **Promociones:** página separada con tres ofertas referenciales.
+- **Contacto:** página separada con teléfono, WhatsApp, horario y enlace a Google Maps.
+
+## Cómo ejecutar el proyecto
+
+1. Instalar las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+2. Iniciar el servidor de desarrollo:
+
+   ```bash
+   ng serve
+   ```
+
+3. Abrir en el navegador:
+
+   ```text
+   http://localhost:4200/
+   ```
+
+También se puede iniciar con:
 
 ```bash
-ng serve
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Estructura principal
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+src/
+├── app/
+│   ├── inicio/
+│   ├── nosotros/
+│   ├── productos/
+│   ├── promociones/
+│   └── contacto/
+├── img/
+└── styles.css
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La página utiliza Angular Router con cuatro rutas sencillas:
 
-```bash
-ng generate --help
-```
+- `/` para Inicio y Nosotros.
+- `/catalogo` para productos, filtros y paginación.
+- `/promociones` para las ofertas.
+- `/contacto` para los medios de contacto y ubicación.
 
-## Building
+El catálogo muestra la opción **Todas** por defecto. Cada filtro reinicia la página en
+el número 1 y la paginación se calcula de acuerdo con los productos encontrados.
 
-To build the project run:
+## Datos referenciales
 
-```bash
-ng build
-```
+Los precios y el horario son datos referenciales para fines académicos. La sección
+de contacto muestra la ubicación en la Av. Caminos del Inca, Santiago de Surco 15039,
+un enlace directo a Google Maps y el teléfono que ya figuraba en el proyecto original.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Commits sugeridos para la evidencia
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. `feat: crear estructura base de la página`
+2. `feat: implementar inicio y navegación`
+3. `feat: implementar catálogo de productos`
+4. `feat: implementar promociones y contacto`
+5. `feat: implementar verificación de edad`
+6. `style: mejorar diseño responsive`
+7. `docs: actualizar README`

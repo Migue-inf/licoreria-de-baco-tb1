@@ -26,11 +26,12 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/app/img",
+                "input": "src/img",
                 "output": "assets/img"
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
