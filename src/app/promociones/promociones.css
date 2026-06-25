@@ -1,0 +1,39 @@
+.seccion-promociones {
+  color: var(--color-blanco);
+  background-color: var(--color-oscuro);
+}
+
+.seccion-promociones .titulo-seccion {
+  color: var(--color-dorado);
+}
+
+.seccion-promociones .subtitulo-seccion {
+  color: #d7cdc3;
+}
+
+.promocion {
+  padding: 28px;
+  border: 1px solid rgba(196, 154, 82, 0.5);
+  border-radius: 12px;
+  background-color: #30251f;
+}
+
+.descuento {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 5px 11px;
+  color: var(--color-oscuro);
+  background-color: var(--color-dorado);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.promocion p {
+  color: #ded5cc;
+  line-height: 1.6;
+}
+
+.promocion strong {
+  color: var(--color-dorado);
+}

@@ -1,0 +1,95 @@
+<main>
+  <section class="seccion-catalogo">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="titulo-seccion">Catálogo de productos</h1>
+        <p class="subtitulo-seccion">
+          Filtra por categoría y revisa los productos disponibles página por página.
+          Las imágenes, existencias y precios son referenciales.
+        </p>
+      </div>
+
+      <div class="verificacion-edad text-center" *ngIf="!mayorEdad">
+        <div class="icono-edad">18+</div>
+        <h2>¿Eres mayor de 18 años?</h2>
+        <p>Debes confirmar tu mayoría de edad antes de ver el catálogo.</p>
+        <p class="advertencia">Tomar bebidas alcohólicas en exceso es dañino.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <button class="btn btn-vino" type="button" (click)="confirmarEdad()">
+            Sí, soy mayor de edad
+          </button>
+          <button class="btn btn-outline-secondary" type="button" (click)="rechazarEdad()">
+            No soy mayor de edad
+          </button>
+        </div>
+        <p class="mensaje-edad mt-3 mb-0" *ngIf="mensajeEdad">{{ mensajeEdad }}</p>
+      </div>
+
+      <div *ngIf="mayorEdad">
+        <div class="filtros-catalogo">
+          <h2 class="h5 mb-3">Filtrar productos</h2>
+          <div class="d-flex flex-wrap gap-2">
+            <button
+              class="btn filtro-boton"
+              [class.activo]="categoriaSeleccionada === categoria"
+              type="button"
+              *ngFor="let categoria of categorias"
+              (click)="seleccionarCategoria(categoria)"
+            >
+              {{ categoria }}
+            </button>
+          </div>
+        </div>
+
+        <div class="resultado-filtro d-flex flex-wrap justify-content-between align-items-center">
+          <h2 class="h4 mb-0">{{ categoriaSeleccionada }}</h2>
+          <span>
+            {{ productosFiltrados.length }} producto(s) ·
+            Página {{ paginaActual }} de {{ totalPaginas }}
+          </span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let producto of productosPaginados">
+            <article class="card tarjeta-producto h-100">
+              <div class="contenedor-imagen">
+                <img
+                  *ngIf="producto.imagen; else imagenReferencial"
+                  [src]="producto.imagen"
+                  [alt]="producto.nombre"
+                >
+                <ng-template #imagenReferencial>
+                  <span class="icono-producto" aria-label="Imagen referencial">{{ producto.icono }}</span>
+                </ng-template>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <span class="categoria">{{ producto.categoria }}</span>
+                <h3 class="h5 mt-2">{{ producto.nombre }}</h3>
+                <p class="descripcion">{{ producto.descripcion }}</p>
+                <p class="precio mt-auto mb-0">{{ producto.precio }}</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <nav class="paginacion-catalogo" aria-label="Páginas del catálogo">
+          <button
+            class="btn pagina-boton"
+            [class.activo]="paginaActual === pagina"
+            type="button"
+            *ngFor="let pagina of paginas"
+            (click)="cambiarPagina(pagina)"
+          >
+            {{ pagina }}
+          </button>
+        </nav>
+
+        <div class="text-center mt-4">
+          <p class="mb-0 texto-responsable">
+            Venta permitida solo a mayores de 18 años. Consume con responsabilidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
