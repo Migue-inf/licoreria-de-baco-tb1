@@ -1,0 +1,155 @@
+.seccion-catalogo {
+  background-color: var(--color-blanco);
+}
+
+.verificacion-edad {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px 25px;
+  border: 2px solid var(--color-dorado);
+  border-radius: 14px;
+  background-color: var(--color-beige);
+}
+
+.icono-edad {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.advertencia,
+.mensaje-edad {
+  color: var(--color-vino);
+  font-weight: 700;
+}
+
+.filtros-catalogo {
+  margin-bottom: 28px;
+  padding: 22px;
+  border-radius: 12px;
+  background-color: var(--color-beige);
+}
+
+.filtro-boton {
+  border: 1px solid var(--color-vino);
+  color: var(--color-vino);
+  background-color: var(--color-blanco);
+}
+
+.filtro-boton:hover,
+.filtro-boton.activo {
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+}
+
+.resultado-filtro {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-dorado);
+  gap: 10px;
+}
+
+.resultado-filtro h2 {
+  color: var(--color-vino);
+  font-weight: 800;
+}
+
+.resultado-filtro span {
+  color: #675c56;
+}
+
+.tarjeta-producto {
+  overflow: hidden;
+  border: 1px solid #e2d8ca;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(49, 42, 38, 0.08);
+}
+
+.contenedor-imagen {
+  display: flex;
+  height: 220px;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf7f1;
+}
+
+.contenedor-imagen img {
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  object-fit: contain;
+}
+
+.icono-producto {
+  font-size: 6rem;
+}
+
+.categoria {
+  width: fit-content;
+  padding: 4px 10px;
+  color: var(--color-vino);
+  background-color: #f5e5e9;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.descripcion {
+  color: #675c56;
+  line-height: 1.5;
+}
+
+.precio {
+  color: var(--color-vino);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.paginacion-catalogo {
+  display: flex;
+  margin-top: 32px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagina-boton {
+  min-width: 42px;
+  border: 1px solid var(--color-dorado);
+  color: var(--color-oscuro);
+  background-color: var(--color-blanco);
+}
+
+.pagina-boton:hover,
+.pagina-boton.activo {
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+  border-color: var(--color-vino);
+}
+
+.texto-responsable {
+  color: #675c56;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .filtros-catalogo {
+    padding: 18px 15px;
+  }
+
+  .resultado-filtro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contenedor-imagen {
+    height: 190px;
+  }
+}

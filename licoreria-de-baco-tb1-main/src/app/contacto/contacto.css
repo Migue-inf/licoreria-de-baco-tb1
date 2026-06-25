@@ -1,0 +1,58 @@
+.seccion-contacto {
+  background-color: var(--color-beige);
+}
+
+.datos-contacto,
+.tarjeta-redes {
+  padding: 30px;
+  border-radius: 14px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 6px 18px rgba(49, 42, 38, 0.1);
+}
+
+.dato {
+  display: flex;
+  margin-bottom: 22px;
+  gap: 16px;
+}
+
+.dato p {
+  margin-bottom: 4px;
+  color: #675c56;
+}
+
+.icono {
+  font-size: 1.8rem;
+}
+
+.enlace-mapa {
+  color: var(--color-vino);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enlace-mapa:hover {
+  text-decoration: underline;
+}
+
+.tarjeta-redes {
+  text-align: center;
+}
+
+.tarjeta-redes img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .datos-contacto,
+  .tarjeta-redes {
+    padding: 24px 20px;
+  }
+
+  .dato {
+    gap: 12px;
+  }
+}

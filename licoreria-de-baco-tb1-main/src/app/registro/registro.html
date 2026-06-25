@@ -1,0 +1,113 @@
+<div class="registro-bg">
+  <div class="registro-card">
+    <h2 class="titulo">Crear cuenta</h2>
+    <p class="subtitulo">Únete a Licorería de Baco</p>
+
+    <div *ngIf="registroExitoso" class="alerta-exito">
+        ¡Registro exitoso! Redirigiendo...
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="fila-dos">
+        <div class="campo-grupo">
+          <label>Nombre</label>
+          <input type="text" formControlName="nombre" placeholder="Tu nombre" />
+          <span class="error" *ngIf="campo('nombre').invalid && campo('nombre').touched">
+            Ingresa un nombre válido
+          </span>
+        </div>
+        <div class="campo-grupo">
+          <label>Apellido</label>
+          <input type="text" formControlName="apellido" placeholder="Tu apellido" />
+          <span class="error" *ngIf="campo('apellido').invalid && campo('apellido').touched">
+            Ingresa un apellido válido
+          </span>
+        </div>
+      </div>
+
+      <div class="campo-grupo">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+        <span class="error" *ngIf="campo('email').invalid && campo('email').touched">
+          Ingresa un email válido
+        </span>
+      </div>
+
+      <div class="campo-grupo">
+        <label>Teléfono</label>
+        <input type="tel" formControlName="telefono" placeholder="987654321" maxlength="9" />
+        <span class="error" *ngIf="campo('telefono').invalid && campo('telefono').touched">
+          Ingresa 9 dígitos
+        </span>
+      </div>
+
+      <div class="campo-grupo">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+        <span class="error" *ngIf="campo('password').invalid && campo('password').touched">
+          Mínimo 6 caracteres
+        </span>
+      </div>
+
+      <div class="campo-grupo">
+        <label>Fecha de nacimiento</label>
+        <div class="fecha-input-wrap">
+          <input type="text" formControlName="fechaNac" placeholder="DD/MM/AAAA" readonly
+                 (click)="mostrarCalendario = !mostrarCalendario" class="fecha-input" />
+          <span class="icono-cal" (click)="mostrarCalendario = !mostrarCalendario">📅</span>
+        </div>
+        <span class="error" *ngIf="campo('fechaNac').invalid && campo('fechaNac').touched">
+          Selecciona tu fecha de nacimiento
+        </span>
+
+        <div class="calendario" *ngIf="mostrarCalendario" (click)="$event.stopPropagation()">
+
+          <div *ngIf="modoSeleccion === 'anio'" class="anio-grid">
+            <div class="anio-titulo">Selecciona el año</div>
+            <div class="anio-lista">
+              @for (a of aniosDisponibles; track a) {
+                <span [class.seleccionado]="a === anioActual"
+                      (click)="seleccionarAnio(a)">
+                 {{ a }}
+                </span>
+             }
+            </div>
+          </div>
+
+          <div *ngIf="modoSeleccion === 'dia'">
+            <div class="cal-header">
+              <button type="button" (click)="mesAnterior()">‹</button>
+              <span class="cal-titulo-mes">
+                {{ meses[mesActual] }}
+                <span class="anio-clickable" (click)="abrirSelectorAnio($event)">
+                  {{ anioActual }} ▾
+                </span>
+              </span>
+              <button type="button" (click)="mesSiguiente()">›</button>
+            </div>
+            <div class="cal-dias-semana">
+              @for (d of ['Do','Lu','Ma','Mi','Ju','Vi','Sa']; track d) {
+                    <span>{{d}}</span>
+             }
+            </div>
+            <div class="cal-grid">
+              @for (dia of diasCalendario; track $index) {
+                <span [class.vacio]="!dia"
+                      [class.seleccionado]="esDiaSeleccionado(dia)"
+                      (click)="seleccionarDia(dia)">
+                 {{ dia || '' }}
+                </span>
+              }
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <button type="submit" class="btn-registrar">Registrarme</button>
+    </form>
+
+    <p class="login-link">¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión</a></p>
+  </div>
+</div>

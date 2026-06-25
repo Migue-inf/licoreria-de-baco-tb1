@@ -1,0 +1,150 @@
+.login-bg {
+  min-height: 100vh;
+  background-image: url('/assets/img/fondo_login.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-bg::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 30, 30, 0.92);
+  border: 1px solid #b8960c;
+  border-radius: 16px;
+  padding: 2.5rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  color: #f0e6c8;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #b8960c;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.subtitulo {
+  color: #aaa;
+  margin-bottom: 1.8rem;
+  font-size: 0.92rem;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  font-size: 0.82rem;
+  color: #b8960c;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  color: #f0e6c8;
+  font-size: 0.95rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #b8960c;
+  box-shadow: 0 0 0 3px rgba(184, 150, 12, 0.2);
+}
+
+input::placeholder {
+  color: #666;
+}
+
+.error {
+  color: #e05c5c;
+  font-size: 0.76rem;
+  margin-top: 0.25rem;
+}
+
+.btn-ingresar {
+  width: 100%;
+  padding: 0.85rem;
+  background: #b8960c;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-ingresar:hover {
+  background: #d4a80e;
+  transform: translateY(-1px);
+}
+
+.btn-ingresar:active {
+  transform: translateY(0);
+}
+
+.registro-link {
+  text-align: center;
+  margin-top: 1.3rem;
+  font-size: 0.88rem;
+  color: #aaa;
+}
+
+.registro-link a {
+  color: #b8960c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.registro-link a:hover {
+  text-decoration: underline;
+}
+
+.alerta-exito {
+  background: #1a3a1a;
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.alerta-error {
+  background: #3a1a1a;
+  border: 1px solid #e05c5c;
+  color: #e05c5c;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  font-size: 0.9rem;
+  text-align: center;
+}

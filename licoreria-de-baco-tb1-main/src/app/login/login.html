@@ -1,0 +1,37 @@
+<div class="login-bg">
+  <div class="login-card">
+    <h2 class="titulo">Iniciar sesión</h2>
+    <p class="subtitulo">Bienvenido de vuelta a Licorería de Baco</p>
+
+    <div *ngIf="loginExitoso" class="alerta-exito">
+      ¡Ingreso exitoso! Redirigiendo...
+    </div>
+
+    <div *ngIf="loginError" class="alerta-error">
+       Email o contraseña incorrectos
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="campo-grupo">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+        <span class="error" *ngIf="campo('email').invalid && campo('email').touched">
+          Ingresa un email válido
+        </span>
+      </div>
+
+      <div class="campo-grupo">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="Tu contraseña" />
+        <span class="error" *ngIf="campo('password').invalid && campo('password').touched">
+          Ingresa tu contraseña
+        </span>
+      </div>
+
+      <button type="submit" class="btn-ingresar">Ingresar</button>
+    </form>
+
+    <p class="registro-link">¿No tienes cuenta? <a routerLink="/registro">Regístrate</a></p>
+  </div>
+</div>

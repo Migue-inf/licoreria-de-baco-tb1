@@ -1,0 +1,25 @@
+<header class="barra-principal sticky-top">
+  <nav class="container d-flex flex-wrap align-items-center justify-content-between py-2">
+    <a class="marca d-flex align-items-center" href="/">
+      <img src="assets/img/LogoOficial_debaco.jpeg" alt="Logo de la Licorería de Baco">
+      <span>Licorería de Baco</span>
+    </a>
+
+    <div class="menu d-flex flex-wrap justify-content-center">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/catalogo">Catálogo</a>
+      <a routerLink="/promociones">Promociones</a>
+      <a routerLink="/contacto">Contacto</a>
+      <a routerLink="/login">Login</a>
+    </div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="pie-pagina py-4">
+  <div class="container text-center">
+    <p class="mb-1">Licorería de Baco - Lima, Perú</p>
+    <small>Tomar bebidas alcohólicas en exceso es dañino.</small>
+  </div>
+</footer>
