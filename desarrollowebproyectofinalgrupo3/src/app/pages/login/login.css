@@ -1,0 +1,90 @@
+.seccion-login {
+  background-color: var(--color-beige);
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+}
+
+.card-login {
+  max-width: 460px;
+  width: 100%;
+  padding: 40px 36px;
+  border-radius: 16px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 8px 30px rgba(49, 42, 38, 0.12);
+}
+
+.login-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.titulo-login {
+  color: var(--color-vino);
+  font-weight: 800;
+}
+
+.subtitulo-login {
+  color: #675c56;
+  font-size: 0.95rem;
+}
+
+.form-label {
+  color: var(--color-texto);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-baco {
+  border: 1.5px solid #d9cfc5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+
+.input-baco:focus {
+  border-color: var(--color-vino);
+  box-shadow: 0 0 0 3px rgba(92, 31, 45, 0.12);
+}
+
+.alerta {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.alerta-error {
+  color: var(--color-vino);
+  background-color: #f5e5e9;
+  border: 1px solid #e8c4cc;
+}
+
+.alerta-exito {
+  color: #1a5e2e;
+  background-color: #d4edda;
+  border: 1px solid #b8dfc5;
+}
+
+.enlace-registro {
+  color: #675c56;
+  font-size: 0.92rem;
+}
+
+.enlace-registro a {
+  color: var(--color-vino);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enlace-registro a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .card-login {
+    padding: 30px 22px;
+  }
+}

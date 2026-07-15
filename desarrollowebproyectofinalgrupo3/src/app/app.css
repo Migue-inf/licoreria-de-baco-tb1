@@ -1,0 +1,186 @@
+.barra-principal {
+  background-color: var(--color-oscuro);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.marca {
+  color: var(--color-blanco);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.marca img {
+  width: 46px;
+  height: 46px;
+  margin-right: 10px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu {
+  gap: 4px;
+}
+
+.menu a {
+  padding: 8px 10px;
+  color: var(--color-blanco);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.menu a:hover {
+  color: var(--color-dorado);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.menu-acciones {
+  gap: 4px;
+}
+
+.accion-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-blanco);
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.accion-icono:hover {
+  color: var(--color-dorado);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.carrito-contenedor {
+  position: relative;
+}
+
+.badge-carrito {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.pie-pagina {
+  color: #c8beb5;
+  background-color: var(--color-oscuro);
+}
+
+.footer-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-titulo {
+  color: var(--color-dorado);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-desc {
+  color: #a09690;
+  font-size: 0.92rem;
+}
+
+.footer-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-lista li {
+  margin-bottom: 6px;
+}
+
+.footer-lista a {
+  color: #c8beb5;
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.footer-lista a:hover {
+  color: var(--color-dorado);
+}
+
+.footer-hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 24px 0 16px;
+}
+
+.footer-legal {
+  color: #7a6e68;
+  font-size: 0.85rem;
+}
+
+.usuario-nombre {
+  color: var(--color-dorado);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .usuario-nombre {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .barra-principal nav {
+    gap: 10px;
+  }
+
+  .menu-acciones .btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .barra-principal nav {
+    justify-content: center !important;
+  }
+
+  .marca {
+    width: 100%;
+    margin-bottom: 4px;
+    justify-content: center;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .menu a {
+    padding: 6px 8px;
+    font-size: 0.88rem;
+  }
+
+  .menu-acciones {
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 4px;
+  }
+}

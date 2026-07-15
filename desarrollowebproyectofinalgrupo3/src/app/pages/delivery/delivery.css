@@ -1,0 +1,166 @@
+.hero-delivery {
+  min-height: 480px;
+  padding: 100px 0;
+  color: var(--color-blanco);
+  background:
+    linear-gradient(90deg, rgba(25, 18, 15, 0.90), rgba(25, 18, 15, 0.40)),
+    url('/assets/img/fondo_delivery.jpeg') center / cover no-repeat;
+}
+
+.hero-delivery-contenido {
+  max-width: 640px;
+}
+
+.etiqueta-delivery {
+  color: var(--color-dorado);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-delivery h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.hero-delivery p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Cómo funciona */
+.seccion-como-funciona {
+  background-color: var(--color-beige);
+}
+
+.paso {
+  padding: 28px 20px;
+  border-radius: 14px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 5px 16px rgba(49, 42, 38, 0.08);
+}
+
+.paso-numero {
+  display: flex;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.paso h3 {
+  color: var(--color-vino);
+  font-weight: 700;
+}
+
+.paso p {
+  color: #675c56;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Cobertura */
+.seccion-cobertura {
+  background-color: var(--color-blanco);
+}
+
+.img-delivery {
+  border-radius: 14px;
+  max-height: 380px;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 22px rgba(38, 25, 18, 0.15);
+}
+
+.lista-zonas {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.lista-zonas li {
+  padding: 8px 12px;
+  border-left: 3px solid var(--color-dorado);
+  background-color: var(--color-beige);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+}
+
+.nota-cobertura {
+  color: #675c56;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Tarifas */
+.seccion-tarifas {
+  background-color: var(--color-oscuro);
+}
+
+.seccion-tarifas .titulo-seccion {
+  color: var(--color-dorado);
+}
+
+.seccion-tarifas .subtitulo-seccion {
+  color: #d7cdc3;
+}
+
+.tarifa {
+  padding: 28px 20px;
+  border: 1px solid rgba(196, 154, 82, 0.35);
+  border-radius: 14px;
+  background-color: #2a1e19;
+}
+
+.tarifa.destacada {
+  border-color: var(--color-dorado);
+  background-color: #35261f;
+}
+
+.tarifa-icono {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.tarifa h3 {
+  color: var(--color-blanco);
+  margin-bottom: 8px;
+}
+
+.tarifa p {
+  color: #ded5cc;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.tarifa-precio {
+  color: var(--color-dorado);
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .hero-delivery {
+    min-height: 420px;
+    padding: 70px 0;
+    text-align: center;
+  }
+
+  .lista-zonas {
+    grid-template-columns: 1fr;
+  }
+}

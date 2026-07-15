@@ -1,0 +1,27 @@
+<main>
+  <section class="seccion-promociones">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="titulo-seccion">Promociones</h1>
+      </div>
+
+      <div class="row g-4 justify-content-center" *ngIf="promociones.length > 0">
+        <div class="col-md-6 col-lg-4" *ngFor="let promocion of promociones">
+          <article class="promocion h-100">
+            <span class="descuento">{{ promocion.badge }}</span>
+            <h3 class="h4">{{ promocion.titulo }}</h3>
+            <p>{{ promocion.descripcion }}</p>
+            <strong>{{ promocion.precioTexto }}</strong>
+          </article>
+        </div>
+      </div>
+
+      <div class="aviso text-center mt-5">
+        <p>
+          Para más información sobre promociones activas, escríbenos por
+          <a href="https://wa.me/51981072222?text=Hola,%20quisiera%20información%20sobre%20las%20promociones" target="_blank" rel="noopener">WhatsApp</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>

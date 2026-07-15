@@ -1,0 +1,236 @@
+.seccion-catalogo {
+  background-color: var(--color-blanco);
+}
+
+.verificacion-edad {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px 25px;
+  border: 2px solid var(--color-dorado);
+  border-radius: 14px;
+  background-color: var(--color-beige);
+}
+
+.icono-edad {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.advertencia,
+.mensaje-edad {
+  color: var(--color-vino);
+  font-weight: 700;
+}
+
+.filtros-catalogo {
+  margin-bottom: 28px;
+  padding: 22px;
+  border-radius: 12px;
+  background-color: var(--color-beige);
+}
+
+.filtro-boton {
+  border: 1px solid var(--color-vino);
+  color: var(--color-vino);
+  background-color: var(--color-blanco);
+}
+
+.filtro-boton:hover,
+.filtro-boton.activo {
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+}
+
+.resultado-filtro {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-dorado);
+  gap: 10px;
+}
+
+.resultado-filtro h2 {
+  color: var(--color-vino);
+  font-weight: 800;
+}
+
+.resultado-filtro span {
+  color: #675c56;
+}
+
+.tarjeta-producto {
+  overflow: hidden;
+  border: 1px solid #e2d8ca;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px rgba(49, 42, 38, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(49, 42, 38, 0.14);
+}
+
+.contenedor-imagen {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf7f1;
+}
+
+.contenedor-imagen img {
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  object-fit: contain;
+}
+
+.icono-producto {
+  font-size: 5.5rem;
+}
+
+.categoria-badge {
+  width: fit-content;
+  padding: 4px 10px;
+  color: var(--color-vino);
+  background-color: #f5e5e9;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.descripcion {
+  color: #675c56;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.precio {
+  color: var(--color-vino);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.paginacion-catalogo {
+  display: flex;
+  margin-top: 32px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pagina-boton {
+  min-width: 42px;
+  border: 1px solid var(--color-dorado);
+  color: var(--color-oscuro);
+  background-color: var(--color-blanco);
+}
+
+.pagina-boton:hover,
+.pagina-boton.activo {
+  color: var(--color-blanco);
+  background-color: var(--color-vino);
+  border-color: var(--color-vino);
+}
+
+.texto-responsable {
+  color: #675c56;
+  font-size: 0.9rem;
+}
+
+/* Toast flotante fijo para feedback del carrito */
+.promociones-catalogo {
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 100%);
+  border: 1px solid #f0dcc0;
+}
+
+.promocion-card {
+  border: 1px solid #e8d5b8;
+  border-radius: 10px;
+  background-color: var(--color-blanco);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.promocion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(180, 120, 60, 0.12);
+}
+
+.badge-promocion {
+  display: inline-block;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  background-color: #d4953a;
+}
+
+.toast-carrito-fijo {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: slideInRight 0.35s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-icono {
+  font-size: 1.3rem;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .toast-carrito-fijo {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 576px) {
+  .filtros-catalogo {
+    padding: 18px 15px;
+  }
+
+  .resultado-filtro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contenedor-imagen {
+    height: 170px;
+  }
+}

@@ -1,0 +1,90 @@
+:root {
+  --color-oscuro: #1d1714;
+  --color-vino: #5c1f2d;
+  --color-dorado: #c49a52;
+  --color-beige: #f5efe4;
+  --color-blanco: #ffffff;
+  --color-texto: #312a26;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 78px;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--color-texto);
+  background-color: #fffdf9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+app-root,
+app-inicio,
+app-nosotros,
+app-productos,
+app-promociones,
+app-contacto,
+app-login,
+app-registro,
+app-buscar,
+app-carritocompras,
+app-delivery {
+  display: block;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-dorado);
+  outline-offset: 3px;
+}
+
+section {
+  padding: 70px 0;
+}
+
+.titulo-seccion {
+  color: var(--color-vino);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.subtitulo-seccion {
+  max-width: 720px;
+  margin: 0 auto 35px;
+  color: #675c56;
+}
+
+.btn-baco {
+  border: none;
+  background-color: var(--color-dorado);
+  color: var(--color-oscuro);
+  font-weight: 700;
+}
+
+.btn-baco:hover {
+  background-color: #ddb66f;
+  color: var(--color-oscuro);
+}
+
+.btn-vino {
+  border: none;
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+}
+
+.btn-vino:hover {
+  background-color: #7b2b3d;
+  color: var(--color-blanco);
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 55px 0;
+  }
+
+  .subtitulo-seccion {
+    margin-bottom: 28px;
+  }
+}

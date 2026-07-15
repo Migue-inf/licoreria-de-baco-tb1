@@ -1,0 +1,126 @@
+<main>
+  <section class="hero-delivery d-flex align-items-center">
+    <div class="container">
+      <div class="hero-delivery-contenido">
+        <p class="etiqueta-delivery">Servicio de entrega a domicilio</p>
+        <h1>Delivery rápido<br>en Lima Sur</h1>
+        <p>Recibe tus bebidas favoritas sin salir de casa. Pedidos por WhatsApp con confirmación en minutos.</p>
+        <a
+          class="btn btn-baco btn-lg"
+          href="https://wa.me/51981072222?text=Hola,%20quisiera%20hacer%20un%20pedido%20a%20domicilio"
+          target="_blank"
+          rel="noopener"
+        >
+          Pedir ahora por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion-como-funciona">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="titulo-seccion">¿Cómo funciona?</h2>
+        <p class="subtitulo-seccion">En tres pasos simples tienes tu pedido en casa.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="paso text-center">
+            <div class="paso-numero">1</div>
+            <h3 class="h5 mt-3">Elige tus productos</h3>
+            <p>Revisa nuestro catálogo y selecciona lo que necesitas para tu reunión o celebración.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="paso text-center">
+            <div class="paso-numero">2</div>
+            <h3 class="h5 mt-3">Envíanos tu pedido</h3>
+            <p>Escríbenos por WhatsApp con tu lista de productos y dirección de entrega.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="paso text-center">
+            <div class="paso-numero">3</div>
+            <h3 class="h5 mt-3">Recibe en casa</h3>
+            <p>Confirmamos disponibilidad, coordinarmos el tiempo de entrega y llevamos tu pedido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion-cobertura">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="titulo-seccion">Zonas de cobertura</h2>
+        <p>Realizamos delivery en distritos seleccionados de Lima Sur. Consulta si tu zona está incluida.</p>
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="mapa-delivery">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31223.64321819629!2d-77.02565291083984!3d-12.144221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b78477b63fc5%3A0x49e6ac205fda2bb5!2sSantiago%20de%20Surco%2C%20Lima!5e0!3m2!1ses!2spe!4v1"
+              width="100%"
+              height="400"
+              style="border:0; border-radius: 14px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa de Lima - Zonas de delivery"
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <ul class="lista-zonas" *ngIf="zonas.length > 0; else sinZonas">
+            <li *ngFor="let zona of zonas">
+              <strong>{{ zona.nombre }}:</strong> {{ zona.distritos.join(', ') }}
+            </li>
+          </ul>
+          <ng-template #sinZonas>
+            <p class="nota-cobertura">Cargando zonas de cobertura...</p>
+          </ng-template>
+          <p class="nota-cobertura">¿No ves tu distrito? Escríbenos, podemos coordinar entregas en zonas cercanas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion-tarifas">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="titulo-seccion">Tarifas de envío</h2>
+        <p class="subtitulo-seccion">Precios referenciales sujetos a confirmación al momento del pedido.</p>
+      </div>
+      <div class="row g-4 justify-content-center" *ngIf="zonas.length > 0">
+        <div class="col-md-4" *ngFor="let zona of zonas">
+          <div class="tarifa text-center">
+            <div class="tarifa-icono">🚚</div>
+            <h3 class="h5">{{ zona.nombre }}</h3>
+            <p>{{ zona.distritos.join(', ') }}</p>
+            <strong class="tarifa-precio">
+              S/ {{ zona.costoMin | number:'1.0-0' }} – {{ zona.costoMax | number:'1.0-0' }}
+            </strong>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="tarifa text-center destacada">
+            <div class="tarifa-icono">🎉</div>
+            <h3 class="h5">Delivery gratis</h3>
+            <p>En pedidos superiores a S/ 80 en zonas de cobertura</p>
+            <strong class="tarifa-precio">Sin costo</strong>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a
+          class="btn btn-vino btn-lg"
+          href="https://wa.me/51981072222?text=Hola,%20quisiera%20consultar%20el%20costo%20de%20delivery%20a%20mi%20zona"
+          target="_blank"
+          rel="noopener"
+        >
+          Consultar mi zona
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,107 @@
+<main>
+  <section class="seccion-catalogo">
+    <div class="container">
+      <div class="text-center">
+        <h1 class="titulo-seccion">Catálogo de productos</h1>
+      </div>
+
+      <div *ngIf="!mayorEdad && !edadRechazada" class="verificacion-edad text-center">
+        <div class="icono-edad">18+</div>
+        <h2 class="h4 advertencia">Verificación de edad</h2>
+        <p>Para acceder al catálogo debes ser mayor de 18 años.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <button type="button" class="btn btn-vino btn-lg" (click)="verificarEdad()">
+            Soy mayor de 18 años
+          </button>
+          <button type="button" class="btn btn-outline-danger btn-lg" (click)="rechazarEdad()">
+            Soy menor de 18 años
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="edadRechazada" class="verificacion-edad text-center">
+        <div class="icono-edad icono-prohibido">🚫</div>
+        <h2 class="h4 advertencia">Venta prohibida a menores de edad</h2>
+        <p>Lo sentimos, no podemos mostrar el catálogo a personas menores de 18 años. El consumo de alcohol está prohibido para menores de edad.</p>
+        <a href="/" class="btn btn-vino btn-lg mt-3">Volver al inicio</a>
+      </div>
+
+      <div *ngIf="mayorEdad">
+        <div class="filtros-catalogo">
+          <h2 class="h5 mb-3">Filtrar por categoría</h2>
+          <div class="d-flex flex-wrap gap-2">
+            <button
+              class="btn filtro-boton"
+              [class.activo]="categoriaSeleccionada === categoria"
+              type="button"
+              *ngFor="let categoria of categorias"
+              (click)="seleccionarCategoria(categoria)"
+            >
+              {{ categoria }}
+            </button>
+          </div>
+        </div>
+
+        <div class="resultado-filtro d-flex flex-wrap justify-content-between align-items-center">
+          <h2 class="h4 mb-0">{{ categoriaSeleccionada }}</h2>
+          <span>
+            {{ productosFiltrados.length }} producto(s) ·
+            Página {{ paginaActual }} de {{ totalPaginas }}
+          </span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let producto of productosPaginados">
+            <article class="card tarjeta-producto h-100">
+              <div class="contenedor-imagen">
+                <img
+                  *ngIf="producto.imagen; else imagenReferencial"
+                  [src]="producto.imagen"
+                  [alt]="producto.nombre"
+                >
+                <ng-template #imagenReferencial>
+                  <span class="icono-producto" aria-label="Imagen referencial">{{ producto.icono }}</span>
+                </ng-template>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <span class="categoria-badge">{{ producto.categoria }}</span>
+                <h3 class="h5 mt-2">{{ producto.nombre }}</h3>
+                <p class="descripcion">{{ producto.descripcion }}</p>
+                <div class="d-flex align-items-center justify-content-between mt-auto">
+                  <p class="precio mb-0">{{ producto.precio }}</p>
+                  <button type="button" class="btn btn-vino btn-sm" (click)="agregarAlCarrito(producto)">
+                  Agregar
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <nav class="paginacion-catalogo" aria-label="Páginas del catálogo">
+          <button
+            class="btn pagina-boton"
+            [class.activo]="paginaActual === pagina"
+            type="button"
+            *ngFor="let pagina of paginas"
+            (click)="cambiarPagina(pagina)"
+          >
+            {{ pagina }}
+          </button>
+        </nav>
+
+        <div class="text-center mt-4">
+          <p class="mb-0 texto-responsable">
+            Venta permitida solo a mayores de 18 años. Consume con responsabilidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast flotante fijo para el carrito -->
+  <div *ngIf="mensajeCarrito" class="toast-carrito-fijo alert alert-success">
+    <span class="toast-icono">🛒</span>
+    {{ mensajeCarrito }}
+  </div>
+</main>

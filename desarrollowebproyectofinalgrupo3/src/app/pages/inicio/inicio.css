@@ -1,0 +1,53 @@
+.hero {
+  min-height: 620px;
+  padding: 100px 0;
+  color: var(--color-blanco);
+  background:
+    linear-gradient(90deg, rgba(25, 18, 15, 0.92), rgba(25, 18, 15, 0.45)),
+    url('/assets/img/fondo_delivery.jpeg') center / cover no-repeat;
+}
+
+.hero-contenido {
+  max-width: 680px;
+}
+
+.texto-destacado {
+  color: var(--color-dorado);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 540px;
+    padding: 70px 0;
+    text-align: center;
+  }
+
+  .hero .d-flex {
+    justify-content: center;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,111 @@
+.seccion-buscar {
+  background-color: var(--color-blanco);
+}
+
+.barra-busqueda {
+  max-width: 680px;
+}
+
+.input-baco {
+  border: 1.5px solid #d9cfc5;
+  border-radius: 8px 0 0 8px !important;
+}
+
+.input-baco:focus {
+  border-color: var(--color-vino);
+  box-shadow: 0 0 0 3px rgba(92, 31, 45, 0.1);
+}
+
+.sugerencias {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.sugerencia-label {
+  color: #675c56;
+  font-size: 0.9rem;
+}
+
+.sugerencia-btn {
+  padding: 4px 12px;
+  border: 1px solid #d9cfc5;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--color-vino);
+  background-color: #faf7f1;
+}
+
+.sugerencia-btn:hover {
+  background-color: var(--color-vino);
+  border-color: var(--color-vino);
+  color: var(--color-blanco);
+}
+
+.resultados-header {
+  margin: 32px 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-dorado);
+}
+
+.resultados-header h2 {
+  color: var(--color-vino);
+  font-weight: 700;
+}
+
+.btn-limpiar {
+  color: #675c56;
+  border: 1px solid #d9cfc5;
+  background-color: transparent;
+  font-size: 0.85rem;
+}
+
+.btn-limpiar:hover {
+  background-color: #f5efe4;
+}
+
+.resultado-card {
+  padding: 16px;
+  border: 1px solid #e2d8ca;
+  border-radius: 12px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 3px 10px rgba(49, 42, 38, 0.07);
+}
+
+.resultado-icono {
+  font-size: 2.8rem;
+  flex-shrink: 0;
+}
+
+.categoria-badge {
+  padding: 2px 8px;
+  color: var(--color-vino);
+  background-color: #f5e5e9;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.precio {
+  color: var(--color-vino);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.sin-resultados,
+.estado-inicial {
+  margin-top: 40px;
+  padding: 40px 20px;
+}
+
+.sin-icono,
+.estado-icono {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.sin-resultados p,
+.estado-inicial p {
+  color: #675c56;
+}

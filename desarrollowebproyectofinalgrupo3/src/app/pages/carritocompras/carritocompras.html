@@ -1,0 +1,82 @@
+<main>
+  <section class="seccion-carrito">
+    <div class="container">
+      <h1 class="titulo-seccion">Carrito de compras</h1>
+
+      <div *ngIf="items.length === 0" class="carrito-vacio text-center">
+        <div class="carrito-icono">🛒</div>
+        <h2 class="h4">Tu carrito está vacío</h2>
+        <p>Aún no has agregado ningún producto. Explora nuestro catálogo y agrega lo que necesites.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="/catalogo" class="btn btn-vino btn-lg">Ver catálogo</a>
+          <a href="/promociones" class="btn btn-baco btn-lg">Ver promociones</a>
+        </div>
+      </div>
+
+      <div *ngIf="items.length > 0">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <p class="mb-0 texto-responsable">Aquí ves los productos que agregaste desde el catálogo.</p>
+          <button type="button" class="btn btn-outline-secondary btn-sm" (click)="vaciarCarrito()">
+            Vaciar carrito
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="lista-carrito">
+              <div class="item-carrito d-flex align-items-center gap-3" *ngFor="let item of items">
+                <div class="item-imagen-contenedor">
+                  <img *ngIf="item.imagen; else iconoReferencial" [src]="item.imagen" [alt]="item.nombre" class="item-imagen">
+                  <ng-template #iconoReferencial>
+                    <span class="item-icono">{{ item.icono }}</span>
+                  </ng-template>
+                </div>
+                <div class="flex-grow-1">
+                  <h3 class="h6 mb-1">{{ item.nombre }}</h3>
+                  <p class="item-precio mb-0">{{ formatearPrecio(item.precio) }}</p>
+                </div>
+                <div class="controles-cantidad d-flex align-items-center gap-2">
+                  <button class="btn btn-control" type="button" (click)="decrementar(item)">−</button>
+                  <span class="cantidad">{{ item.cantidad }}</span>
+                  <button class="btn btn-control" type="button" (click)="incrementar(item)">+</button>
+                </div>
+                <div class="item-subtotal">{{ formatearPrecio(item.precio * item.cantidad) }}</div>
+                <button class="btn btn-eliminar" type="button" (click)="eliminar(item)" aria-label="Eliminar">✕</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="resumen-carrito">
+              <h2 class="h5 mb-3">Resumen del pedido</h2>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal ({{ totalItems }} producto(s))</span>
+                <span>{{ formatearPrecio(subtotal) }}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Delivery</span>
+                <span class="texto-delivery">Consultar</span>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between total-final">
+                <strong>Total estimado</strong>
+                <strong>{{ formatearPrecio(subtotal) }}</strong>
+              </div>
+              <a
+                class="btn btn-vino w-100 mt-4"
+                href="https://wa.me/51981072222?text=Hola,%20quisiera%20hacer%20un%20pedido"
+                target="_blank"
+                rel="noopener"
+              >
+                Pedir por WhatsApp
+              </a>
+              <a href="/catalogo" class="btn btn-outline-secondary w-100 mt-2">
+                Seguir comprando
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

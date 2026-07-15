@@ -1,0 +1,150 @@
+.seccion-carrito {
+  background-color: var(--color-beige);
+  min-height: calc(100vh - 140px);
+}
+
+.carrito-vacio {
+  max-width: 520px;
+  margin: 20px auto 0;
+  padding: 50px 24px;
+  border-radius: 16px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 6px 18px rgba(49, 42, 38, 0.09);
+}
+
+.carrito-icono {
+  font-size: 4.5rem;
+  margin-bottom: 16px;
+}
+
+.carrito-vacio h2 {
+  color: var(--color-vino);
+  font-weight: 800;
+}
+
+.carrito-vacio p {
+  color: #675c56;
+}
+
+.lista-carrito {
+  padding: 24px;
+  border-radius: 14px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 5px 16px rgba(49, 42, 38, 0.09);
+}
+
+.item-carrito {
+  padding: 14px 0;
+  border-bottom: 1px solid #ede6dd;
+}
+
+.item-carrito:last-child {
+  border-bottom: none;
+}
+
+.item-imagen-contenedor {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--color-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-icono {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.item-precio {
+  color: #675c56;
+  font-size: 0.9rem;
+}
+
+.controles-cantidad {
+  flex-shrink: 0;
+}
+
+.btn-control {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1.5px solid #d9cfc5;
+  border-radius: 6px;
+  background-color: var(--color-blanco);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.btn-control:hover {
+  background-color: var(--color-beige);
+}
+
+.cantidad {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.item-subtotal {
+  color: var(--color-vino);
+  font-weight: 800;
+  min-width: 70px;
+  text-align: right;
+}
+
+.btn-eliminar {
+  color: #9c8880;
+  border: none;
+  background: none;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+
+.btn-eliminar:hover {
+  color: var(--color-vino);
+}
+
+.resumen-carrito {
+  padding: 24px;
+  border-radius: 14px;
+  background-color: var(--color-blanco);
+  box-shadow: 0 5px 16px rgba(49, 42, 38, 0.09);
+  color: var(--color-texto);
+  font-size: 0.95rem;
+}
+
+.resumen-carrito h2 {
+  color: var(--color-vino);
+  font-weight: 800;
+}
+
+.texto-delivery {
+  color: var(--color-dorado);
+  font-weight: 700;
+}
+
+.total-final {
+  font-size: 1.05rem;
+}
+
+.total-final strong {
+  color: var(--color-vino);
+}
+
+@media (max-width: 576px) {
+  .item-subtotal {
+    min-width: 55px;
+    font-size: 0.95rem;
+  }
+}

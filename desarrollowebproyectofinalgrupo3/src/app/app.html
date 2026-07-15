@@ -1,0 +1,72 @@
+<header class="barra-principal sticky-top">
+  <nav class="container d-flex flex-wrap align-items-center justify-content-between py-2">
+    <a class="marca d-flex align-items-center" href="/">
+      <img src="/assets/img/LogoOficial_debaco.jpeg" alt="Logo de la Licorería de Baco">
+      <span>Licorería de Baco</span>
+    </a>
+
+    <div class="menu d-flex flex-wrap justify-content-center">
+      <a href="/">Inicio</a>
+      <a href="/catalogo">Catálogo</a>
+      <a href="/promociones">Promociones</a>
+      <a href="/delivery">Delivery</a>
+      <a href="/contacto">Contacto</a>
+    </div>
+
+    <div class="menu-acciones d-flex align-items-center">
+      <a class="accion-icono" href="/buscar" aria-label="Buscar productos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.099zm-5.242 1.156a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11"/>
+        </svg>
+      </a>
+      <a class="accion-icono carrito-contenedor" href="/carritocompras" aria-label="Ver carrito">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+        </svg>
+        <span class="badge-carrito" *ngIf="totalItems > 0">{{ totalItems }}</span>
+      </a>
+      <ng-container *ngIf="usuarioNombre; else sinSesion">
+        <span class="usuario-nombre">{{ usuarioNombre }}</span>
+        <button class="btn btn-outline-light btn-sm ms-2" type="button" (click)="cerrarSesion()">Cerrar sesión</button>
+      </ng-container>
+      <ng-template #sinSesion>
+        <a class="btn btn-vino btn-sm ms-2" href="/login">Iniciar sesión</a>
+      </ng-template>
+    </div>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="pie-pagina py-5">
+  <div class="container">
+    <div class="row g-4 text-center text-md-start">
+      <div class="col-md-4">
+        <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2 mb-2">
+          <img src="/assets/img/LogoOficial_debaco.jpeg" alt="Logo" class="footer-logo">
+          <strong>Licorería de Baco</strong>
+        </div>
+        <p class="footer-desc">Tu punto de encuentro para cada celebración en Lima, Perú.</p>
+      </div>
+      <div class="col-md-4">
+        <strong class="footer-titulo">Navegación</strong>
+        <ul class="footer-lista mt-2">
+          <li><a href="/catalogo">Catálogo</a></li>
+          <li><a href="/promociones">Promociones</a></li>
+          <li><a href="/delivery">Delivery</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <strong class="footer-titulo">Contacto</strong>
+        <p class="mt-2 mb-1">☎ 981 072 222</p>
+        <p class="mb-1">📍 Av. Caminos del Inca, Santiago de Surco</p>
+        <p class="mb-0">🕒 Lun-Sáb: 10am – 11pm</p>
+      </div>
+    </div>
+    <hr class="footer-hr">
+    <p class="text-center mb-0 footer-legal">
+      Tomar bebidas alcohólicas en exceso es dañino. Venta solo a mayores de 18 años.
+    </p>
+  </div>
+</footer>
